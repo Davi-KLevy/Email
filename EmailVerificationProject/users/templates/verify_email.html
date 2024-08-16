@@ -1,0 +1,12 @@
+<h2>Verificar Email</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="code" placeholder="Código de Verificação" required>
+    <button type="submit">Verificar</button>
+</form>
+<form method="post" action="{% url 'resend_code' %}">
+    {% csrf_token %}
+    <input type="email" name="email" placeholder="Email" required>
+    <button type="submit">Reenviar Código</button>
+</form>
